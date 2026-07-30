@@ -15,5 +15,5 @@ def home():
         "total_requests": total,
         "unique_users":len(unique)
     })
-if _name_=="main":
+if __name__=="__main__":
     app.run(host="0.0.0.0",port=5001)
