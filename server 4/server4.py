@@ -8,11 +8,12 @@ identity= socket.gethostname()
 def home():
     global total,unique 
     ip=request.remote_addr
+    total+=1
     unique.add(ip)
     return jsonify({
         "server_identity":identity,
         "total_requests": total,
         "unique_users":len(unique)
     })
-if _name_=="main":
+if __name__=="__main__":
     app.run(host="0.0.0.0",port=5004)
