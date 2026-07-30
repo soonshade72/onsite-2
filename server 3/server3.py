@@ -9,10 +9,11 @@ def home():
     global total,unique 
     ip=request.remote_addr
     unique.add(ip)
+    total+=1
     return jsonify({
         "server_identity":identity,
         "total_requests": total,
         "unique_users":len(unique)
     })
-if _name_=="main":
+if __name_=="__main__":
     app.run(host="0.0.0.0",port=5003)
