@@ -7,6 +7,7 @@ identity= socket.gethostname()
 @app.route("/")
 def home():
     global total,unique 
+    total+=1
     ip=request.remote_addr
     unique.add(ip)
     return jsonify({
